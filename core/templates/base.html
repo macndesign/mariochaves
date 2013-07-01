@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <title>Mário Chaves - {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="site,mariochaves,mariochav.es,personal,pessoal,design,xsd,extreme,software">
+    <meta name="description" content="Site pessoal do consultor Mário Chaves">
+    <meta name="author" content="Mário Chaves <macndesign@gmail.com>">
+    <!-- Bootstrap -->
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Custom styles -->
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet" media="screen">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
 {% block content %}{% endblock %}
+<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+{% block script %}{% endblock %}
 </body>
 </html>

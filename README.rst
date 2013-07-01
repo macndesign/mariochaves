@@ -25,4 +25,4 @@ Contribuidores
 License
 -------
 
-Copyright 2013 Pistalo and contributors.
+Copyright 2013 Mario Chaves and contributors.
