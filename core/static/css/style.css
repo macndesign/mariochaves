@@ -1,1 +1,19 @@
 /* Custom styles */
+
+body {
+    background: #f8f8f8;
+    font-family: 'Arvo', serif;
+}
+blockquote { font-style: italic; border-left: solid 5px #f8f8f8 }
+header { background: #d9edf7 }
+#main { background: #fff }
+
+header {
+    padding: 2em 0;
+}
+header .logo {
+    font-weight: bolder;
+    color: #5b80b2;
+    font-size: 2em;
+    text-transform: uppercase;
+}
