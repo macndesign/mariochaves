@@ -4,7 +4,9 @@ Unipath==1.0
 boto==2.9.7
 distribute==0.7.3
 dj-database-url==0.2.1
+django-imagekit==3.0.1
 django-storages==1.1.8
+django-taggit==0.10a1
 docutils==0.10
 gunicorn==0.17.4
 pillow==2.0.0
