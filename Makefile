@@ -22,5 +22,4 @@ collectstatic:
 heroku:
 	@git push heroku master
 
-deploy:
-	@heroku remote_migrate collectstatic
+deploy: heroku remote_migrate collectstatic
