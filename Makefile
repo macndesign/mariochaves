@@ -1,16 +1,26 @@
 clean:
 	@find . -name "*.pyc" -delete
 
+run:
+	@python manage.py runserver 0.0.0.0:8000
+
 deps:
 	@pip install -r requirements.txt
 
-setup: deps
-	@python manage.py syncdb
-	@python manage.py migrate
-	@git remote add heroku git@heroku.com:pistalo.git
+settings:
+	cp mariochaves/local_settings.example.py mariochaves/local_settings.py
 
-run:
-	@python manage.py runserver 0.0.0.0:8000
+add_remote:
+	@heroku git:remote -a pistalo
+
+syncdb:
+	@python manage.py syncdb --noinput
+	@python manage.py migrate
+
+setup: deps settings add_remote syncdb
+
+heroku:
+	@git push heroku master
 
 remote_migrate:
 	@heroku run python manage.py syncdb --noinput
@@ -18,8 +28,5 @@ remote_migrate:
 
 collectstatic:
 	@heroku run python manage.py collectstatic --noinput
-
-heroku:
-	@git push heroku master
 
 deploy: heroku remote_migrate collectstatic
